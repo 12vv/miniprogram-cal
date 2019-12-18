@@ -1,0 +1,9 @@
+<!--logs.wxml-->
+<view class="container">
+      <image bindtap="" src="data:image/png;base64,{{imgUrl}}" mode="widthFix" class="info_img" mode="cover"></image>
+
+  <view class="usermotto">
+    <text class="user-motto">{{motto.hitokoto}}</text>
+    <text class="motto-from">--- {{motto.from}}</text>
+  </view>
+</view>
