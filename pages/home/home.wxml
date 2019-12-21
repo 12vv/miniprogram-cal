@@ -1,9 +1,38 @@
 <!--logs.wxml-->
-<view class="container">
-      <image bindtap="" src="data:image/png;base64,{{imgUrl}}" mode="widthFix" class="info_img" mode="cover"></image>
+<view class="wrapper">
+<view class="main">
 
-  <view class="usermotto">
+  <view class="calender">
+    <view class="lunar">
+      <view class="lunar-year">
+        {{lunarData.gzYear}} {{lunarData.gzMonth}} {{lunarData.gzDay}}
+      </view>
+      <view class="lunar-date">
+        {{lunarData.monthCn}}{{lunarData.dayCn}}
+        {{lunarData.ncWeek}}
+      </view>  
+      <view class="full-date">
+        {{year}} 年 {{month}} 月 {{day}} 日
+      </view>
+  </view>
+
+  <view class="day">
+  {{day}}
+  </view>
+  <view class="clear"></view>
+  </view>
+
+<view class="img"> 
+      <image bindtap="bindViewChangepic" src="data:image/png;base64,{{imgUrl}}" mode="widthFix" class="info_img" mode="cover"></image>
+</view>
+
+  <view class="usermotto" bindtap="bindViewChangemotto" >
     <text class="user-motto">{{motto.hitokoto}}</text>
     <text class="motto-from">--- {{motto.from}}</text>
+    <view class="clear"></view>
   </view>
+
+<view class="clear"></view>
+</view>
+<view class="clear"></view>
 </view>

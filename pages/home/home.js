@@ -1,9 +1,30 @@
 const app = getApp();
 
+// var util = require('../../utils/util.js');
+import solarLunar from '../../solarlunar.min.js';
+
+
+var timestamp = Date.parse(new Date());
+var date = new Date(timestamp);
+//获取年份  
+var Y = date.getFullYear();
+//获取月份  
+var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1);
+//获取当日日期 
+var D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
+
+
+const lunarData = solarLunar.solar2lunar(Y, M, D);
+// console.log(lunarData);
+
 Page({
   data: {
     imgUrl:{},
     motto:{},
+    year: Y,
+    month: M,
+    day: D,
+    lunarData: lunarData,
   },
 
   onLoad: function () {
@@ -13,6 +34,21 @@ Page({
 
   onShow: function () {
     
+  },
+
+  //事件处理函数
+  bindViewChangepic: function () {
+    // wx.navigateTo({
+    //   url: '../details/details'
+    // })
+    this.mainDisplay();
+  },
+
+  bindViewChangemotto: function () {
+    // wx.navigateTo({
+    //   url: '../details/details'
+    // })
+    this.getMotto();
   },
 
   mainDisplay: function (data) {
@@ -28,7 +64,7 @@ Page({
       responseType: 'arraybuffer',
       success: res => {
         app.globalData.movieInfo = res.data
-        console.log(res)
+        // console.log(res)
         this.setData({
           imgUrl: wx.arrayBufferToBase64(res.data)
           // hasUserInfo: true
@@ -45,7 +81,7 @@ Page({
       url: "https://v1.hitokoto.cn/",
       success: res => {
         app.globalData.movieInfo = res.data
-        console.log(res)
+        // console.log(res)
         this.setData({
           motto: res.data
         })
