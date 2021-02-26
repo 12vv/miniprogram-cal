@@ -3,8 +3,6 @@
 
 A Calendar App running on WeChat mini-program
 
-<br>
-
 ## Usage
 在微信中扫描这个二维码。
 
@@ -18,8 +16,6 @@ Scan this QR code in Wechat.
 Enter the applet, the current date will be automatically generated (Beijing time), the wallpaper is randomly generated from [Bing API](https://bing.ioliu.cn/), 
 click for randomly change; the quotation below the wallpaper is randomly generated from [Hitokoto API](https://hitokoto.cn/), click for randomly change.
 
-
-<br>
 
 ## Display
 
